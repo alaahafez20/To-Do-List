@@ -63,7 +63,7 @@ function completeToDo(id){
     itemI.firstElementChild.classList.toggle('fa-circle')
     itemText.classList.toggle('lineThrough')
     completedItemIndex = itemsStore.indexOf(itemsStore.find(t => t.Id == id))
-    itemsStore[completedItemIndex].Done = itemsStore[completedItemIndex].Done? false : true; 
+    itemsStore[completedItemIndex].Done = !itemsStore[completedItemIndex].Done
     localStorage.setItem('toDo',JSON.stringify(itemsStore))
 }
 
